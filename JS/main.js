@@ -142,7 +142,7 @@ editbts.forEach((element)=>{
   input.focus();
   // -------------------------------------------
   console.log(element.parentElement);
-  input.onchange = function(){
+  input.oninput = function(){
     val = input.value;
     console.log(val);
     let inner = `<input type="text" value="${val}"> <button class = "edit"><i class="fa-solid fa-pen-to-square"></i></button> <button class = "delete"><i class="fa-solid fa-trash"></i></button>`;
