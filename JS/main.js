@@ -136,13 +136,12 @@ let inputs = document.querySelectorAll(".parent >div .tasks div input");
 editbts.forEach((element)=>{
   element.onclick = function(){
   let input = element.parentElement.firstElementChild
+  // to set cursor at the end of the input field
+  const end = input.value.length;
+  input.setSelectionRange(end,end);
   input.focus();
+  // -------------------------------------------
   console.log(element.parentElement);
-  let temp = {
-    innerHTML:element.parentElement.innerHTML,
-    id : element.parentElement.id,
-    class : element.parentElement.className
-  }
   input.onchange = function(){
     val = input.value;
     console.log(val);
@@ -155,17 +154,31 @@ editbts.forEach((element)=>{
     }
     let json = JSON.stringify(divDate);
     if (element.parentElement.className === 'not-s'){
-      console.log(notStarted.indexOf(JSON.stringify(temp)));
-      notStarted[notStarted.indexOf(JSON.stringify(temp))] = json
+      for(let l = 0;l<notStarted.length;l++){
+        if (JSON.parse(notStarted[l]).id === divDate.id){
+          notStarted[l] = json;
+          break;
+        }
+      }
       localStorage.setItem("notStarted-tasks",notStarted);
     }else if (element.parentElement.className === 'in-p'){
-      console.log(inPro.indexOf(JSON.stringify(temp)));
-      inPro[inPro.indexOf(JSON.stringify(temp))] = json
+      for(let l = 0;l<inPro.length;l++){
+        if (JSON.parse(inPro[l]).id === divDate.id){
+          console.log(JSON.parse(inPro[l]).id , divDate.id ,l)
+          console.log(json)
+          inPro[l] = json;
+          break;
+        }
+      }
       localStorage.setItem("inPro-tasks",inPro);
     }
     else{
-      console.log(comp.indexOf(JSON.stringify(temp)));
-      comp[comp.indexOf(JSON.stringify(temp))] = json
+      for(let l = 0;l<comp.length;l++){
+        if (JSON.parse(comp[l]).id === divDate.id){
+          comp[l] = json;
+          break;
+        }
+      }
       localStorage.setItem("comp-tasks",comp);
     }
   }
