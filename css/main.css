@@ -1,0 +1,76 @@
+*{
+ margin: 0;
+ padding: 0;
+ font-family: 'Roboto', sans-serif;
+}
+.parent{
+ max-width: 900px;
+ background-color: #2e7530ed;
+ display: grid;
+ grid-template-columns: repeat(3,calc((100% - 10px ) / 3));
+ gap: 10px;
+ padding: 20px;
+ margin: 10px auto;
+ border-radius: 5px;
+}
+
+.parent >div{
+ background-color: transparent;
+ color: white;
+}
+.parent >div .tasks{
+ margin-top: 15px;
+ min-height: 15px;
+}
+
+.parent >div .tasks div{
+ padding: 8px;
+ font-size: 16px;
+ color: black;
+ background-color: white; 
+ margin-top: 10px;
+ border-radius: 5px;
+ display: flex;
+ justify-content: space-between;
+}
+.parent >div .tasks div input{
+ height: 100%;
+ min-width: 80%;
+ border: none;
+ outline: none;
+ font-size: 16px;
+}
+
+.parent >div button[class="add"]{
+ background-color: #255c27;
+ width: 100%;
+ text-align: center;
+ outline: none;
+ border-radius: 5px;
+ border: none;
+ padding: 10px 0;
+ cursor: pointer;
+ margin-top: 10px;
+}
+.parent .tasks div button{
+ background-color: transparent;
+}
+
+button {
+ outline: none;
+ border: none;
+ cursor: pointer;
+}
+
+@media(max-width:945px){
+ .parent{
+  grid-template-columns: repeat(2,auto);
+ }
+}
+
+
+@media(max-width:675px){
+ .parent{
+  grid-template-columns: auto;
+ }
+}

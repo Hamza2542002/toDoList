@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>ToDoList</title>
+ <link rel="stylesheet" href="css/main.css">
+ <link rel="stylesheet" href="css/all.min.css">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+ <div class="parent">
+  <div class="not-started">
+   <h2>Not Started</h2>
+   <div class="content">
+    <div class="tasks" id="not-s"></div>
+    <button class="add">Add+</button> <!--onclick="btOnCLick(1)"-->
+   </div>
+  </div>
+  <div class="in-pro">
+   <h2>In Progress</h2>
+   <div class="content">
+    <div class="tasks" id="in-p"></div>
+    <button class="add">Add+</button> <!--onclick="btOnCLick(1)"-->
+   </div>
+   
+  </div>
+  <div class="completed">
+   <h2>Completed</h2>
+   <div class="content">
+    <div class="tasks" id="comp"></div>
+    <button class="add">Add+</button> <!--onclick="btOnCLick(1)"-->
+   </div>
+  </div>
+ </div>
+ <script src="JS/main.js"></script>
+</body>
+</html>
